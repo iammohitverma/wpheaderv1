@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+:root {
+  --primary-color: #27ae61;
+  --text-dark-color: #2f3640;
+  --text-light-color: #ffffff;
+}
+
+header {
+  background-color: var(--primary-color);
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  position: relative;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+header .navigationWrap nav>ul .sub-menu li {
+  margin: 0;
+}
+
+header .navigationWrap nav>ul .sub-menu li a {
+  padding: 10px;
+  margin: 0;
+  font-size: 14px;
+}
+
+header a {
+  text-decoration: none;
+  transition: 0.5s;
+  color: var(--text-light-color);
+  display: inline-block;
+}
+
+header .active a, header a:hover {
+  text-decoration: none;
+  color: var(--text-dark-color);
+}
+
+header .headerWrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+header .logoBx {
+  max-width: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+header .logoBx a {
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+header .logoBx a img {
+  height: 75px;
+  width: auto;
+}
+
+header .navigationWrap nav>ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header .navigationWrap nav>ul li a {
+  padding: 40px 0;
+  display: inline-block;
+  font-size: 18px;
+}
+
+header .a-Wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+header .navigationWrap nav ul li a {
+  display: block;
+  flex-basis: calc(100% - 50px);
+  flex-grow: 1;
+}
+
+.subMenuAngle {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sub-menu .subMenuAngle {
+  margin-right: 5px;
+}
+
+header nav .sub-menu {
+  position: absolute;
+  background: var(--primary-color);
+  width: 200px;
+  top: calc(100% - 2px);
+  left: 0;
+  display: none;
+  transition: 0.5s;
+}
+
+.menu-item-has-children:hover>.sub-menu {
+  display: block;
+}
+
+.menu-item-has-children .sub-menu .sub-menu {
+  top: 0;
+  left: 100%;
+}
+
+header nav>ul>li:last-child .sub-menu {
+  right: 0;
+  left: unset;
+}
+
+header nav>ul>li:last-child .sub-menu .sub-menu {
+  right: 100%;
+  left: unset;
+}
+
+@media (max-width:1600px) {
+  header .navigationWrap nav>ul li a {
+    font-size: 16px;
+  }
+  header nav .sub-menu {
+    width: 170px;
+  }
+}
+
+@media (max-width:1470px) {
+  header nav .sub-menu {
+    left: unset;
+    right: 0;
+  }
+  .menu-item-has-children .sub-menu .sub-menu {
+    right: 100%;
+    left: unset;
+  }
+}
+
+@media (max-width:1200px) {
+  header .navigationWrap nav>ul li a {
+    font-size: 15px;
+  }
+  header .logoBx {
+    max-width: 250px;
+  }
+  header .logoBx a {
+    font-size: 44px;
+  }
+}
+
+@media (max-width:992px) {
+  header li {
+    margin-left: 0;
+  }
+  header .navigationWrap {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  body.logged-in header .navigationWrap {
+    top: 32px;
+  }
+  body.menuOpen header .navigationWrap {
+    left: 0;
+  }
+  header .navigationWrap nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 150px);
+    overflow: auto;
+    width: 100%;
+    max-width: calc(100% - 30px);
+  }
+  header .logoBx a {
+    font-size: 40px;
+    padding: 20px 0;
+  }
+  header .logoBx a img {
+    height: 60px;
+    vertical-align: bottom;
+  }
+  header .navigationWrap nav ul {
+    width: 100%;
+    max-width: 400px;
+  }
+  header .navigationWrap nav>ul {
+    flex-direction: column;
+  }
+  header ul .sub-menu {
+    position: static;
+    background: rgba(255, 255, 255, 0.03);
+    transition: unset;
+  }
+  .menu-item-has-children:hover>.sub-menu {
+    display: none;
+  }
+  .sub-menu .subMenuAngle {
+    margin-right: 0px;
+  }
+  header .navigationWrap nav>ul li a {
+    margin-left: 0;
+  }
+  header .navigationWrap nav ul li a {
+    padding: 0;
+    flex-basis: calc(100% - 35px);
+  }
+  header .navigationWrap nav>ul .sub-menu li a {
+    padding: 0;
+  }
+  header .a-Wrap {
+    padding: 15px;
+  }
+  header .a-Wrap {
+    border-bottom: 1px solid var(--text-light-color);
+  }
+  .subMenuAngle {
+    background: var(--text-light-color);
+  }
+}
+
+/* for mobile tab Menus when user login via Dashboard */
+
+@media (max-width:783.98px) {
+  body.logged-in header .navigationWrap {
+    top: 46px;
+  }
+}
+
+@media (max-width:768px) {
+  header .logoBx {
+    max-width: 200px;
+  }
+}
+
+@media (max-width:576px) {
+  header .logoBx a {
+    font-size: 32px;
+  }
+  header .logoBx a img {
+    height: 42px;
+    vertical-align: middle;
+  }
+}
